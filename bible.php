@@ -39,6 +39,7 @@ myaudio.addEventListener("ended", function (e) {
 }, true);
 */
 </script>
+
 </head>
 <body><div class="wrapper" id="top">
 		<div class="main_head">
