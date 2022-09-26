@@ -186,14 +186,14 @@ function fnPlayAudio(pchap_no) {
 	$("#chap"+pchap_no).css("background", "#fc8a5a");
 
 	if(ptype == 1) {
-		var sourceUrl = "http://zoebible.ddns.net/dat_bible/";
+		var sourceUrl = "http://bible.ddns.net/dat_bible/";
 		if(pbook_no < 10) pbook_no = "BL0" + pbook_no;
 		else pbook_no = "BL" + pbook_no;
 		pbook_name = pbook_no + "_" + pbook_name;
 		sourceUrl += pbook_name + "/" + pbook_name + " (" + pchap_no + ").mp3";
 	}
 	else {
-		var sourceUrl = "http://zoebible.ddns.net/dat_lifestudy/";
+		var sourceUrl = "http://bible.ddns.net/dat_lifestudy/";
 		if(pbook_no < 10) pbook_no = "LS0" + pbook_no;
 		else pbook_no = "LS" + pbook_no;
 		pbook_name = pbook_no + "_" + pbook_name;
