@@ -1,8 +1,12 @@
 <?php
 $person = strtolower($_GET['person']);
 
+// person list array
+$person_list = ["0728", "lordjesus", "0153", "1009"];
+
 if($person) {
-  if($person == "0153") {
+  // check if person is in the list
+  if(in_array($person, $person_list)) {
     setcookie("access_bible", "true", time() + (86400 * 7), "/"); // 86400 = 1 day
     header("Location: /index.php");
   } else {
