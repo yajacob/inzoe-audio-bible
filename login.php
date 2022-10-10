@@ -1,5 +1,5 @@
 <?php
-$person = strtolower($_POST['person']);
+$person = strtolower($_GET['person']);
 
 if($person) {
   if($person == "0153") {
