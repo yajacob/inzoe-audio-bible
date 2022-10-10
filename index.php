@@ -1,26 +1,23 @@
-<html>
-<script type="text/javascript">
-window.onload = function () {
-	let timestamp = localStorage.getItem("access_bible");
-	let loginFlag = false;
+<?
+	include_once ($_SERVER['DOCUMENT_ROOT']."/lib/mobile_detect/Mobile_Detect.php");
+	$detect = new Mobile_Detect;
 
-	if (timestamp) {
-		let now = new Date().getTime();
-		let diff = now - timestamp;
-		if (diff < 1000 * 60 * 60 * 24) {
-			loginFlag = true;
+	// login check
+	if (isset($_COOKIE['access_bible'])) {
+		if (strstr($_SERVER['HTTP_USER_AGENT'], 'iPad')) {
+			include_once("./bible.php");
+		}
+		else if ( $detect->isMobile() ) {
+			include_once("./bible_m.php");
+		}
+		else if( $detect->isTablet() ){
+			include_once("./bible.php");
+		}
+		else {
+			include_once("./bible.php");
 		}
 	}
-
-	if (!loginFlag) {
-		let person = prompt("Please enter access code:");
-		if (person == "0153") {
-			localStorage.setItem("access_bible", new Date().getTime());
-      window.location.href = "/main.php";
-		} else {
-			window.location.href = "/welcome.php";
-		}
+	else {
+		include_once("./login.php");
 	}
-}
-</script>
-</html>
+?>
