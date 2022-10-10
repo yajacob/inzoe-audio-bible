@@ -2,7 +2,7 @@
 $person = strtolower($_GET['person']);
 
 // person list array
-$person_list = ["0728", "lordjesus", "0153", "1009"];
+$person_list = ["0728", "lordjesus", "0153"];
 
 if($person) {
   // check if person is in the list
